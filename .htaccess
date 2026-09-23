@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests into the Laravel public folder
+    # Use this when cPanel document root cannot be changed from public_html
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

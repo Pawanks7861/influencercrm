@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-surface text-ink font-sans antialiased;
+    }
+
+    ::selection {
+        @apply bg-accent/20 text-ink;
+    }
+}
+
+@layer components {
+    .crm-card {
+        @apply bg-surface-card border border-surface-border rounded-xl shadow-soft;
+    }
+
+    .crm-input {
+        @apply block w-full rounded-lg border-surface-border bg-white text-sm text-ink
+            placeholder:text-ink-muted/60 shadow-sm
+            focus:border-accent focus:ring-accent/30;
+    }
+
+    .crm-label {
+        @apply block text-sm font-medium text-ink-soft mb-1.5;
+    }
+
+    .crm-btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium
+            transition focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    }
+
+    .crm-btn-primary {
+        @apply crm-btn bg-accent text-white hover:bg-accent-hover focus:ring-accent/40;
+    }
+
+    .crm-btn-secondary {
+        @apply crm-btn bg-white text-ink-soft border border-surface-border hover:bg-surface focus:ring-ink/10;
+    }
+
+    .crm-btn-danger {
+        @apply crm-btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500/40;
+    }
+
+    .crm-btn-ghost {
+        @apply crm-btn bg-transparent text-ink-muted hover:bg-surface hover:text-ink focus:ring-ink/10;
+    }
+}
